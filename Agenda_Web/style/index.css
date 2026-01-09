@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url("../images/FondoLogin.png"); 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/*Color de Iniciar secion y registrar arriba del sw*/
+.login h6 {
+    color: #000000;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.login h6 span {
+    padding: 0 35px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox:checked+label,
+.checkbox:not(:checked)+label {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 60px;
+    height: 16px;
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 0;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.checkbox:checked+label::before,
+.checkbox:not(:checked)+label::before {
+    position: absolute;
+    display: block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #000000;
+    background: #ffffff;
+    font-family: 'boxicons';
+    content: '\ea3a';
+    z-index: 20;
+    top: -10px;
+    left: -10px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 20px;
+    transition: all .5s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.checkbox:checked+label::before {
+    transform: translateX(44px) rotate(-270deg);
+}
+
+.card-3d-wrap {
+    position: relative;
+    width: 450px;
+    max-width: 100%;
+    height: 500px;
+    margin-top: 60px;
+    transform-style: preserve-3d;
+    perspective: 800px;
+}
+
+.card-3d-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    transition: all .6s ease-out;
+}
+
+.checkbox:checked~.card-3d-wrap .card-3d-wrapper {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    /*Fondo del cuadro que dice registro y login*/
+    backdrop-filter: blur(25px);
+    /*Borde del cuadro de registro y login*/
+    border: 2px solid #000000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    padding: 7.5em 2.5em 4em 2.5em;
+    /*Texto debajo del boton registrarme*/
+    color: #000000f1;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.login-header {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*Fondo donde dice login*/
+    background-color: #000000;
+    width: 160px;
+    height: 70px;
+    border-radius: 0 0 20px 20px;
+}
+/*Texto donde dice login*/
+.login-header span {
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.login-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 50%;
+    background: transparent;
+    /*esquina izquierda de donde dice login*/
+    box-shadow: 15px 0 0 0 #000000;
+}
+
+.login-header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-left-radius: 50%;
+    background: transparent;
+    /*/esquina derecha de donde dice login*/
+    box-shadow: -15px 0 0 0 #000000;
+}
+
+.input_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+/*color del texto*/
+.input-field {
+    width: 100%;
+    height: 55px;
+    font-size: 16px;
+    background: transparent;
+    color: #000000;
+    padding-inline: 20px 50px;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+/*Efecto al dar click en los cuadros de texto*/
+.input-field:focus {
+    border-color: rgb(255, 97, 97);
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.label {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    transition: 0.3s ease;
+    pointer-events: none;
+    color: #000000;
+}
+
+/*Titulo de cada input*/
+.input-field:focus~.label,
+.input-field:valid~.label,
+.input-field:not(:placeholder-shown)~.label {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 14px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    color: #000000;
+    padding: 0 10px;
+}
+
+.icon {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    font-size: 20px;
+    color: #d0d0d0;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus~.icon {
+    color: #000000;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.remember-me input[type="checkbox"] {
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+/*Boton de registro*/
+.input-submit {
+    width: 100%;
+    height: 50px;
+    background: #ececec;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.input-submit:hover {
+    background: #d0d0d0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.input-submit:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(255, 0, 0, 0.767);
+    text-decoration: none;
+}
+
+.register {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register a {
+    font-weight: 600;
+    color: #ff1e00bb;
+}
+
+.link {
+    color: #000000;
+    margin-top: 20px;
+    display: block;
+    font-size: 14px;
+}
+
+.link:hover {
+    color: #ff1e00;
+}
+
+.message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+
+/* lo responsivo  */
+@media only screen and (max-width: 564px) {
+    .card-3d-wrap {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .card-front,
+    .card-back {
+        padding: 6em 1.5em 3em 1.5em;
+    }
+}
