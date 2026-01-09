@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("../images/FondoLogin.png"); 
+    background-image: url("../images/FondoLogin1.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -33,9 +33,45 @@ a:hover {
     text-align: center;
 }
 
+/* NAV */
+nav {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(41, 41, 41, 0.85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Contenedor */
+nav .container {
+    width: 100%;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Logo */
+nav .logo {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Span rojo */
+nav .logo span {
+    color: #ff0000;
+}
+
 /*Color de Iniciar secion y registrar arriba del sw*/
 .login h6 {
-    color: #000000;
+    color: #ffffff;
     margin-bottom: 30px;
     font-size: 16px;
     font-weight: 500;
@@ -123,7 +159,7 @@ input[type="checkbox"] {
     /*Fondo del cuadro que dice registro y login*/
     backdrop-filter: blur(25px);
     /*Borde del cuadro de registro y login*/
-    border: 2px solid #000000;
+    border: 2px solid #ffffff;
     position: absolute;
     left: 0;
     top: 0;
@@ -131,8 +167,8 @@ input[type="checkbox"] {
     backface-visibility: hidden;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
     padding: 7.5em 2.5em 4em 2.5em;
-    /*Texto debajo del boton registrarme*/
-    color: #000000f1;
+    /*Texto debajo del boton registrarme link*/
+    color: #fffffff1;
 }
 
 .card-back {
@@ -148,15 +184,16 @@ input[type="checkbox"] {
     align-items: center;
     justify-content: center;
     /*Fondo donde dice login*/
-    background-color: #000000;
+    background-color: #ffffff;
     width: 160px;
     height: 70px;
     border-radius: 0 0 20px 20px;
 }
+
 /*Texto donde dice login*/
 .login-header span {
     font-size: 24px;
-    color: #ffffff;
+    color: #000000;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -171,7 +208,7 @@ input[type="checkbox"] {
     border-top-right-radius: 50%;
     background: transparent;
     /*esquina izquierda de donde dice login*/
-    box-shadow: 15px 0 0 0 #000000;
+    box-shadow: 15px 0 0 0 #ffffff;
 }
 
 .login-header::after {
@@ -184,7 +221,7 @@ input[type="checkbox"] {
     border-top-left-radius: 50%;
     background: transparent;
     /*/esquina derecha de donde dice login*/
-    box-shadow: -15px 0 0 0 #000000;
+    box-shadow: -15px 0 0 0 #ffffff;
 }
 
 .input_box {
@@ -193,22 +230,24 @@ input[type="checkbox"] {
     flex-direction: column;
     margin: 20px 0;
 }
+
 /*color del texto*/
 .input-field {
     width: 100%;
     height: 55px;
     font-size: 16px;
     background: transparent;
-    color: #000000;
+    color: #ffffff;
     padding-inline: 20px 50px;
     border: 2px solid #ffffff;
     border-radius: 30px;
     outline: none;
     transition: all 0.3s ease;
 }
+
 /*Efecto al dar click en los cuadros de texto*/
 .input-field:focus {
-    border-color: rgb(255, 97, 97);
+    border-color: rgb(255, 0, 0);
     box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
@@ -245,7 +284,7 @@ input[type="checkbox"] {
 }
 
 .input-field:focus~.icon {
-    color: #000000;
+    color: #ff0000;
 }
 
 .remember-forgot {
@@ -266,6 +305,7 @@ input[type="checkbox"] {
     width: 16px;
     height: 16px;
 }
+
 /*Boton de registro*/
 .input-submit {
     width: 100%;
@@ -311,7 +351,7 @@ input[type="checkbox"] {
 }
 
 .link {
-    color: #000000;
+    color: #ffffff;
     margin-top: 20px;
     display: block;
     font-size: 14px;
