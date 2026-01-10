@@ -59,7 +59,11 @@
                             <div class="contact-phone"><i class="fa-solid fa-phone"></i> +502 1234-5678</div>
                         </div>
                     </div>
-                    <button class="cssbuttons-io-button">
+                    <button class="cssbuttons-io-button" onclick="openModal(
+                        'Angela Galicia',
+                        '+502 1234-5678',
+                        'Ciudad de Guatemala'
+                    )">
                         Ver Más
                         <div class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg"
@@ -78,6 +82,7 @@
                     </button>
 
                 </div>
+
 
                 <div class="contact-card">
                     <div class="contact-info">
@@ -189,6 +194,18 @@
             </div>
         </div>
     </main>
+
+    <!-- Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <h2 id="modalName"></h2>
+            <p><strong>Teléfono:</strong> <span id="modalPhone"></span></p>
+            <p><strong>Dirección:</strong> <span id="modalAddress"></span></p>
+        </div>
+    </div>
+    <script src="../script/index.js"></script>
 </body>
 
 </html>
