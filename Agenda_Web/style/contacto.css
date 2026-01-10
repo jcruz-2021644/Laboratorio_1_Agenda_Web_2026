@@ -1,0 +1,206 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #1a1f2e;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #252d3f;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #2a3449;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo-at {
+            color: #ffffff;
+        }
+
+        .logo-knl {
+            color: #ef4444;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .icon-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            background-color: transparent;
+            border: 1px solid #3a4559;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .icon-btn:hover {
+            background-color: #2a3449;
+        }
+
+        .icon-btn.active {
+            background-color: #ef4444;
+            border-color: #ef4444;
+        }
+
+        .icon-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: #ffffff;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .add-contact-box {
+            border: 2px dashed #ef4444;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            background-color: rgba(239, 68, 68, 0.05);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .add-contact-box:hover {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-color: #ff5555;
+        }
+
+        .add-contact-box::before {
+            content: "+";
+            display: block;
+            font-size: 2.5rem;
+            color: #ef4444;
+            margin-bottom: 0.5rem;
+        }
+
+        .add-contact-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .contacts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-card {
+            background-color: #252d3f;
+            border: 1px solid #2a3449;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: #3a4559;
+            background-color: #2a3449;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 3px solid #ef4444;
+            object-fit: cover;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .contact-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .contact-phone {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+
+        .ver-btn {
+            background-color: #ef4444;
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .ver-btn:hover {
+            background-color: #dc2626;
+            transform: scale(1.05);
+        }
+
+        .ver-btn:active {
+            transform: scale(0.98);
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 1rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .contact-card {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .ver-btn {
+                width: 100%;
+            }
+        }
