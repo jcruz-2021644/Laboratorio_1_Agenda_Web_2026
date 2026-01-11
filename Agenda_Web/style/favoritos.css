@@ -1,0 +1,440 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-image: url("../images/FondoContacto.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgba(41, 41, 41, 0.85);
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    padding: 0 25px;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/*linea del link sin diseño */
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-at {
+    color: #ffffff;
+}
+
+.logo-knl {
+    color: #ff0000;
+}
+
+.header-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.icon-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon-btn.active {
+    background-color: #ffc400;
+    border-color: #ffc400;
+}
+
+
+.icon-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+}
+
+.icon-btn-home {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.icon-btn-home:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon-btn-home.active {
+    background-color: #fc684e;
+    border-color: #fc684e;
+}
+
+.icon-btn-home svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+}
+
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 120px auto 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+}
+
+.contacts-container {
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 2px solid #000000;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
+}
+
+.add-contact-box {
+    border: 2px dashed #ff0000;
+    border-radius: 30px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-contact-box:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+    border-color: #ff5555;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.add-contact-box::before {
+    content: "+";
+    display: block;
+    font-size: 2.5rem;
+    color: #ff0000;
+    margin-bottom: 0.5rem;
+}
+
+.add-contact-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    border-color: #ff0000;
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid #ff0000;
+    object-fit: cover;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contact-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.contact-phone {
+    font-size: 0.875rem;
+    color: #d0d0d0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+/*Nuevo boton ver*/
+.cssbuttons-io-button {
+    background: #f07070;
+    color: white;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #000000;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+}
+
+.cssbuttons-io-button .icon {
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #ad3838;
+    right: 0.3em;
+    transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #b95252;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+
+.modal-content {
+    background: #111;
+    color: #fff;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    margin: 10% auto;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+
+.close {
+    color: #ff0000;
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#modalPhoto {
+    /*ancho*/
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+    border: 3px solid #ff0000;
+}
+
+.add-contact-form {
+    display: flex;
+    object-position: center;
+    flex-direction: column;
+    /*espacio entre input*/
+    gap: 25px;
+}
+
+.add-contact-form input {
+    /*alto*/
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: Poppins;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.cssbuttons-io-buttonC {
+    background: #f07070;
+    color: white;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #000000;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+    width: 70%;
+}
+
+.cssbuttons-io-buttonC .icon {
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #ad3838;
+    right: 0.3em;
+    transition: all 0.3s;
+}
+
+.cssbuttons-io-buttonC:hover .icon {
+    width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-buttonC .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #b95252;
+}
+
+.cssbuttons-io-buttonC:hover .icon svg {
+    transform: translateX(0.1em);
+}
+
+.cssbuttons-io-buttonC:active .icon {
+    transform: scale(0.95);
+}  
+
+
+@media (max-width: 640px) {
+    header {
+        padding: 1rem;
+        height: 80px;
+    }
+
+    .logo {
+        font-size: 1.75rem;
+    }
+
+    main {
+        padding: 1rem;
+        margin: 100px auto 1rem;
+    }
+
+    .contacts-container {
+        padding: 1.5rem;
+    }
+
+    .contact-card {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .ver-btn {
+        width: 100%;
+    }
+}
