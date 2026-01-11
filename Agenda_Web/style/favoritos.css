@@ -5,21 +5,20 @@
 }
 
 body {
-    background-image: url("../images/FondoContacto.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-image: url("../images/FondoContacto.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+
 header {
+    /*color del nav*/
     background-color: rgba(41, 41, 41, 0.85);
     width: 100%;
+    /*altura del nav*/
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -28,6 +27,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    /*que este arriba de todo*/
     z-index: 9999;
     padding: 0 25px;
 }
@@ -58,37 +58,43 @@ header {
     align-items: center;
 }
 
+/* Estilo de los botones de iconos */
 .icon-btn {
+    /*ancho y alto del boton*/
     width: 44px;
     height: 44px;
+    /*que tan redondo *bordes* */
     border-radius: 8px;
     background-color: transparent;
     border: 2px solid #ffffff;
     display: flex;
+    /*los iconos en que aparte*/
     align-items: center;
     justify-content: center;
+    /*selector de tipo de cursor al pasar por arriba*/
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
+/*cambio de color al pasar el cursor*/
 .icon-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.233);
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
-
 .icon-btn.active {
     background-color: #ffc400;
     border-color: #ffc400;
 }
 
-
+/*icono dentro del boton*/
 .icon-btn svg {
     width: 20px;
     height: 20px;
     fill: #ffffff;
 }
 
+/*boton home*/
 .icon-btn-home {
     width: 44px;
     height: 44px;
@@ -119,6 +125,7 @@ header {
     fill: #ffffff;
 }
 
+
 main {
     padding: 2rem;
     max-width: 900px;
@@ -129,6 +136,7 @@ main {
     min-height: calc(100vh - 140px);
 }
 
+/* Contenedor de contactos */
 .contacts-container {
     background-color: rgba(0, 0, 0, 0.85);
     border: 2px solid #000000;
@@ -137,15 +145,19 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    /*ancho*/
     width: 100%;
     box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
 }
 
+/*agregar contacto*/
 .add-contact-box {
     border: 2px dashed #ff0000;
     border-radius: 30px;
+    /*alto del agregar contacto*/
     padding: 2rem;
     text-align: center;
+    /*espacio debajo del boton agregar contacto*/
     margin-bottom: 2rem;
     background-color: rgba(255, 255, 255, 0.05);
     cursor: pointer;
@@ -167,19 +179,23 @@ main {
     margin-bottom: 0.5rem;
 }
 
+/*texto dentro del agregar contacto*/
 .add-contact-text {
     font-size: 1.25rem;
     font-weight: 600;
     color: #ffffff;
 }
 
+/*lista de contactos */
 .contacts-list {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
+/* el cuadro del contacto */
 .contact-card {
+    /*color de fondo del cuadro*/
     background-color: rgba(255, 255, 255, 0.1);
     border: 2px solid #ffffff;
     border-radius: 12px;
@@ -191,38 +207,51 @@ main {
 }
 
 .contact-card:hover {
+    /*borde cuando pasa el cursor*/
     border-color: #ff0000;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.233);
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
+/*info del contacto dentro del cuadro*/
 .contact-info {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
+/*foto del contacto*/
 .avatar {
     width: 56px;
     height: 56px;
     border-radius: 50%;
     border: 2px solid #ff0000;
     object-fit: cover;
+    box-shadow: 0 0 10px 2px #ffffff70;
 }
 
+/*hover del avatar*/
+.avatar:hover {
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 10px 2px #ff0000;
+}
+
+/*detalles del contacto*/
 .contact-details {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
 }
 
+/*nombre del contacto*/
 .contact-name {
     font-size: 1.125rem;
     font-weight: 600;
     color: #ffffff;
 }
 
+/*telefono del contacto*/
 .contact-phone {
     font-size: 0.875rem;
     color: #d0d0d0;
@@ -234,7 +263,9 @@ main {
 
 /*Nuevo boton ver*/
 .cssbuttons-io-button {
-    background: #f07070;
+    /*color de fondo del boton*/
+    background: #ff0303b9;
+    /*color de letra*/
     color: white;
     font-family: inherit;
     padding: 0.35em;
@@ -246,6 +277,7 @@ main {
     letter-spacing: 0.05em;
     display: flex;
     align-items: center;
+    /*somnra de adentro*/
     box-shadow: inset 0 0 1.6em -0.6em #000000;
     overflow: hidden;
     position: relative;
@@ -255,6 +287,7 @@ main {
 }
 
 .cssbuttons-io-button .icon {
+    /*fondo donde esta el icono*/
     background: white;
     margin-left: 1em;
     position: absolute;
@@ -264,7 +297,8 @@ main {
     height: 2.2em;
     width: 2.2em;
     border-radius: 0.7em;
-    box-shadow: 0.1em 0.1em 0.6em 0.2em #ad3838;
+    /*sombra de adentro*/
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #00000088;
     right: 0.3em;
     transition: all 0.3s;
 }
@@ -276,7 +310,7 @@ main {
 .cssbuttons-io-button .icon svg {
     width: 1.1em;
     transition: transform 0.3s;
-    color: #b95252;
+    color: #000000;
 }
 
 .cssbuttons-io-button:hover .icon svg {
@@ -295,118 +329,69 @@ main {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    /*color del puro fondo de la vista emergente*/
+    background: rgba(114, 110, 110, 0.5);
 }
 
-
 .modal-content {
+    position: relative;
+    /*color del cuadro de la vista emergente*/
     background: #111;
+    /*color de las letras*/
     color: #fff;
-    padding: 20px;
-    width: 90%;
+    /*tamaño de la vista emergente*/
+    padding: 5rem;
+    /*ancho*/
+    width: 100%;
+    /*ancho maximo*/
     max-width: 400px;
+    /*que tan centrado*/
     margin: 10% auto;
+    /*que tan redondo*/
     border-radius: 12px;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+
 }
 
+.modal-content p+p {
+    margin-top: 1rem;
+}
+
+/*Titulo de los contactos en la vista emergente*/
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+/*cerrar la vista emergente*/
 .close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
     color: #ff0000;
-    float: right;
     font-size: 24px;
     cursor: pointer;
 }
 
+/*foto dentro de la vista emergente*/
 #modalPhoto {
     /*ancho*/
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    /*alto*/
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
-    margin: 0 auto 15px;
+    margin: 0 auto 2rem;
     border: 3px solid #ff0000;
 }
 
-.add-contact-form {
-    display: flex;
-    object-position: center;
-    flex-direction: column;
-    /*espacio entre input*/
-    gap: 25px;
+/*hover de la foto*/
+#modalPhoto:hover {
+    border: 3px solid #fa000075;
 }
-
-.add-contact-form input {
-    /*alto*/
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-family: Poppins;
-}
-
-.modal-content h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #ffffff;
-}
-
-.cssbuttons-io-buttonC {
-    background: #f07070;
-    color: white;
-    font-family: inherit;
-    padding: 0.35em;
-    padding-left: 1.2em;
-    font-size: 17px;
-    font-weight: 500;
-    border-radius: 0.9em;
-    border: none;
-    letter-spacing: 0.05em;
-    display: flex;
-    align-items: center;
-    box-shadow: inset 0 0 1.6em -0.6em #000000;
-    overflow: hidden;
-    position: relative;
-    height: 2.8em;
-    padding-right: 3.3em;
-    cursor: pointer;
-    width: 70%;
-}
-
-.cssbuttons-io-buttonC .icon {
-    background: white;
-    margin-left: 1em;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 2.2em;
-    width: 2.2em;
-    border-radius: 0.7em;
-    box-shadow: 0.1em 0.1em 0.6em 0.2em #ad3838;
-    right: 0.3em;
-    transition: all 0.3s;
-}
-
-.cssbuttons-io-buttonC:hover .icon {
-    width: calc(100% - 0.6em);
-}
-
-.cssbuttons-io-buttonC .icon svg {
-    width: 1.1em;
-    transition: transform 0.3s;
-    color: #b95252;
-}
-
-.cssbuttons-io-buttonC:hover .icon svg {
-    transform: translateX(0.1em);
-}
-
-.cssbuttons-io-buttonC:active .icon {
-    transform: scale(0.95);
-}  
-
-
 @media (max-width: 640px) {
     header {
         padding: 1rem;
