@@ -5,408 +5,593 @@
 }
 
 body {
-    background-image: url("../images/FondoContacto.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     min-height: 100vh;
+    background-image: url("../images/FondoContacto.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+header {
+    /*color del nav*/
+    background-color: rgba(41, 41, 41, 0.85);
+    width: 100%;
+    /*altura del nav*/
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /*que este arriba de todo*/
+    z-index: 9999;
+    padding: 0 25px;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/*linea del link sin diseño */
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-at {
+    color: #ffffff;
+}
+
+.logo-knl {
+    color: #ff0000;
+}
+
+.header-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Estilo de los botones de iconos */
+.icon-btn {
+    /*ancho y alto del boton*/
+    width: 44px;
+    height: 44px;
+    /*que tan redondo *bordes* */
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    display: flex;
+    /*los iconos en que aparte*/
+    align-items: center;
+    justify-content: center;
+    /*selector de tipo de cursor al pasar por arriba*/
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/*cambio de color al pasar el cursor*/
+.icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.233);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*icono dentro del boton*/
+.icon-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+}
+
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 120px auto 2rem;
     display: flex;
     justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.2);
-    }
+    align-items: center;
+    min-height: calc(100vh - 140px);
+}
 
+/* Contenedor de contactos */
+.contacts-container {
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 2px solid #000000;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /*ancho*/
+    width: 100%;
+    box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
+}
+
+/*agregar contacto*/
+.add-contact-box {
+    border: 2px dashed #ff0000;
+    border-radius: 30px;
+    /*alto del agregar contacto*/
+    padding: 2rem;
+    text-align: center;
+    /*espacio debajo del boton agregar contacto*/
+    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-contact-box:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+    border-color: #ff5555;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.add-contact-box::before {
+    content: "+";
+    display: block;
+    font-size: 2.5rem;
+    color: #ff0000;
+    margin-bottom: 0.5rem;
+}
+
+/*texto dentro del agregar contacto*/
+.add-contact-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/*lista de contactos */
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* el cuadro del contacto */
+.contact-card {
+    /*color de fondo del cuadro*/
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    /*borde cuando pasa el cursor*/
+    border-color: #ff0000;
+    background-color: rgba(255, 255, 255, 0.233);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*info del contacto dentro del cuadro*/
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/*foto del contacto*/
+.avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid #ff0000;
+    object-fit: cover;
+    box-shadow: 0 0 10px 2px #ffffff70;
+}
+
+/*hover del avatar*/
+.avatar:hover {
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 10px 2px #ff0000;
+}
+
+/*detalles del contacto*/
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/*nombre del contacto*/
+.contact-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/*telefono del contacto*/
+.contact-phone {
+    font-size: 0.875rem;
+    color: #d0d0d0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+/*Nuevo boton ver*/
+.cssbuttons-io-button {
+    /*color de fondo del boton*/
+    background: #ff0303b9;
+    /*color de letra*/
+    color: white;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    /*somnra de adentro*/
+    box-shadow: inset 0 0 1.6em -0.6em #000000;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+}
+
+.cssbuttons-io-button .icon {
+    /*fondo donde esta el icono*/
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    /*sombra de adentro*/
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #00000088;
+    right: 0.3em;
+    transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #000000;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /*color del puro fondo de la vista emergente*/
+    background: rgba(114, 110, 110, 0.5);
+}
+
+.modal-content {
+    position: relative;
+    /*color del cuadro de la vista emergente*/
+    background: #111;
+    /*color de las letras*/
+    color: #fff;
+    /*tamaño de la vista emergente*/
+    padding: 5rem;
+    /*ancho*/
+    width: 100%;
+    /*ancho maximo*/
+    max-width: 400px;
+    /*que tan centrado*/
+    margin: 10% auto;
+    /*que tan redondo*/
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+
+}
+
+.modal-content p+p {
+    margin-top: 1rem;
+}
+
+/*Titulo de los contactos en la vista emergente*/
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+/*cerrar la vista emergente*/
+.close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: #ff0000;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/*foto dentro de la vista emergente*/
+#modalPhoto {
+    /*ancho*/
+    width: 200px;
+    /*alto*/
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 2rem;
+    border: 3px solid #ff0000;
+}
+
+/*hover de la foto*/
+#modalPhoto:hover {
+    border: 3px solid #fa000075;
+}
+
+
+/*agregar contacto*/
+
+.modal-content-add {
+    position: relative;
+    /*color del cuadro de la vista emergente*/
+    background: #111;
+    /*color de las letras*/
+    color: #fff;
+    /*espacio dentro del cuadro*/
+    padding: 5rem;
+    /*ancho*/
+    width: 100%;
+    /*ancho maximo*/
+    max-width: 470px;
+    /*que tan centrado*/
+    margin: 10% auto;
+    /*que tan redondo*/
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+
+}
+
+/*Titulo de la vista emergente agregar*/
+.modal-content-add h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+/*cerrar la vista emergente*/
+.close-add {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: #ff0000;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Estilo de los inputs */
+.input_box {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+/*color del texto del input*/
+.input-field {
+    width: 100%;
+    height: 55px;
+    font-size: 16px;
+    background: transparent;
+    color: #ffffff;
+    padding-inline: 20px 50px;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/*Efecto al dar click en los cuadros de texto*/
+.input-field:focus {
+    border-color: rgb(255, 0, 0);
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.label {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    transition: 0.3s ease;
+    pointer-events: none;
+    color: #000000;
+}
+
+/*Titulo de cada input*/
+.input-field:focus~.label,
+.input-field:valid~.label,
+.input-field:not(:placeholder-shown)~.label {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 14px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    color: #000000;
+    padding: 0 10px;
+}
+
+.icon-add {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    font-size: 20px;
+    color: #d0d0d0;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus~.icon {
+    color: #ff0000;
+}
+
+/*Boton de registro*/
+.input-add {
+    width: 100%;
+    height: 50px;
+    background: #ececec;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.input-add:hover {
+    background: #d0d0d0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.input-add:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(255, 0, 0, 0.767);
+    text-decoration: none;
+}
+
+/*Nuevo boton ver*/
+.cssbuttons-io-buttonC {
+    /*color de fondo del boton*/
+    background: #ff0303b9;
+    /*color de letra*/
+    color: white;
+    font-family: inherit;
+    /*espacio interno*/
+    padding: 0.35em;
+    /*para que el texto no quede pegado*/
+    padding-left: 3rem;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    /*somnra de adentro*/
+    box-shadow: inset 0 0 1.6em -0.6em #000000;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+}
+
+.cssbuttons-io-buttonC .icon {
+    /*fondo donde esta el icono*/
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    /*sombra de adentro*/
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #00000088;
+    right: 0.3em;
+    transition: all 0.3s;
+}
+
+.cssbuttons-io-buttonC:hover .icon {
+    width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-buttonC .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #000000;
+}
+
+.cssbuttons-io-buttonC:hover .icon svg {
+    transform: translateX(0.1em);
+}
+
+.cssbuttons-io-buttonC:active .icon {
+    transform: scale(0.95);
+}
+
+
+
+@media (max-width: 640px) {
     header {
-        background-color: rgba(41, 41, 41, 0.85);
-        width: 100%;
-        height: 100px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #ffffff;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        padding: 0 25px;
+        padding: 1rem;
+        height: 80px;
     }
 
     .logo {
-        font-size: 2.5rem;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
-    /*linea del link sin diseño */
-    .logo a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .logo-at {
-        color: #ffffff;
-    }
-
-    .logo-knl {
-        color: #ff0000;
-    }
-
-    .header-icons {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-    }
-
-    .icon-btn {
-        width: 44px;
-        height: 44px;
-        border-radius: 8px;
-        background-color: transparent;
-        border: 2px solid #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .icon-btn:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .icon-btn.active {
-        background-color: #ffc400;
-        border-color: #ffc400;
-    }
-
-    .icon-btn svg {
-        width: 20px;
-        height: 20px;
-        fill: #ffffff;
+        font-size: 1.75rem;
     }
 
     main {
-        padding: 2rem;
-        max-width: 900px;
-        margin: 120px auto 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: calc(100vh - 140px);
+        padding: 1rem;
+        margin: 100px auto 1rem;
     }
 
     .contacts-container {
-        background-color: rgba(0, 0, 0, 0.85);
-        border: 2px solid #000000;
-        border-radius: 20px;
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        width: 100%;
-        box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
-    }
-
-    .add-contact-box {
-        border: 2px dashed #ff0000;
-        border-radius: 30px;
-        padding: 2rem;
-        text-align: center;
-        margin-bottom: 2rem;
-        background-color: rgba(255, 255, 255, 0.05);
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .add-contact-box:hover {
-        background-color: rgba(255, 0, 0, 0.1);
-        border-color: #ff5555;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .add-contact-box::before {
-        content: "+";
-        display: block;
-        font-size: 2.5rem;
-        color: #ff0000;
-        margin-bottom: 0.5rem;
-    }
-
-    .add-contact-text {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #ffffff;
-    }
-
-    .contacts-list {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+        padding: 1.5rem;
     }
 
     .contact-card {
-        background-color: rgba(255, 255, 255, 0.1);
-        border: 2px solid #ffffff;
-        border-radius: 12px;
-        padding: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        transition: all 0.3s ease;
-    }
-
-    .contact-card:hover {
-        border-color: #ff0000;
-        background-color: rgba(255, 255, 255, 0.15);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
     }
 
     .contact-info {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .avatar {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        border: 2px solid #ff0000;
-        object-fit: cover;
-    }
-
-    .contact-details {
-        display: flex;
         flex-direction: column;
-        gap: 0.25rem;
-    }
-
-    .contact-name {
-        font-size: 1.125rem;
-        font-weight: 600;
-        color: #ffffff;
-    }
-
-    .contact-phone {
-        font-size: 0.875rem;
-        color: #d0d0d0;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-
-    /*Nuevo boton ver*/
-    .cssbuttons-io-button {
-        background: #f07070;
-        color: white;
-        font-family: inherit;
-        padding: 0.35em;
-        padding-left: 1.2em;
-        font-size: 17px;
-        font-weight: 500;
-        border-radius: 0.9em;
-        border: none;
-        letter-spacing: 0.05em;
-        display: flex;
-        align-items: center;
-        box-shadow: inset 0 0 1.6em -0.6em #000000;
-        overflow: hidden;
-        position: relative;
-        height: 2.8em;
-        padding-right: 3.3em;
-        cursor: pointer;
-    }
-
-    .cssbuttons-io-button .icon {
-        background: white;
-        margin-left: 1em;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 2.2em;
-        width: 2.2em;
-        border-radius: 0.7em;
-        box-shadow: 0.1em 0.1em 0.6em 0.2em #ad3838;
-        right: 0.3em;
-        transition: all 0.3s;
-    }
-
-    .cssbuttons-io-button:hover .icon {
-        width: calc(100% - 0.6em);
-    }
-
-    .cssbuttons-io-button .icon svg {
-        width: 1.1em;
-        transition: transform 0.3s;
-        color: #b95252;
-    }
-
-    .cssbuttons-io-button:hover .icon svg {
-        transform: translateX(0.1em);
-    }
-
-    .cssbuttons-io-button:active .icon {
-        transform: scale(0.95);
-    }
-
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 10000;
-        left: 0;
-        top: 0;
         width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
     }
 
-
-    .modal-content {
-        background: #111;
-        color: #fff;
-        padding: 20px;
-        width: 90%;
-        max-width: 400px;
-        margin: 10% auto;
-        border-radius: 12px;
-        font-family: 'Poppins', sans-serif;
-        box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    .ver-btn {
+        width: 100%;
     }
-
-    .close {
-        color: #ff0000;
-        float: right;
-        font-size: 24px;
-        cursor: pointer;
-    }
-
-    #modalPhoto {
-        /*ancho*/
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-        display: block;
-        margin: 0 auto 15px;
-        border: 3px solid #ff0000;
-    }
-
-    .add-contact-form {
-        display: flex;
-        object-position: center;
-        flex-direction: column;
-        /*espacio entre input*/
-        gap: 25px;
-    }
-
-    .add-contact-form input {
-        /*alto*/
-        padding: 10px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        font-family: Poppins;
-    }
-
-    .modal-content h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        color: #ffffff;
-    }
-
-    .cssbuttons-io-buttonC {
-        background: #f07070;
-        color: white;
-        font-family: inherit;
-        padding: 0.35em;
-        padding-left: 1.2em;
-        font-size: 17px;
-        font-weight: 500;
-        border-radius: 0.9em;
-        border: none;
-        letter-spacing: 0.05em;
-        display: flex;
-        align-items: center;
-        box-shadow: inset 0 0 1.6em -0.6em #000000;
-        overflow: hidden;
-        position: relative;
-        height: 2.8em;
-        padding-right: 3.3em;
-        cursor: pointer;
-        width: 70%;
-    }
-
-    .cssbuttons-io-buttonC .icon {
-        background: white;
-        margin-left: 1em;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 2.2em;
-        width: 2.2em;
-        border-radius: 0.7em;
-        box-shadow: 0.1em 0.1em 0.6em 0.2em #ad3838;
-        right: 0.3em;
-        transition: all 0.3s;
-    }
-
-    .cssbuttons-io-buttonC:hover .icon {
-        width: calc(100% - 0.6em);
-    }
-
-    .cssbuttons-io-buttonC .icon svg {
-        width: 1.1em;
-        transition: transform 0.3s;
-        color: #b95252;
-    }
-
-    .cssbuttons-io-buttonC:hover .icon svg {
-        transform: translateX(0.1em);
-    }
-
-    .cssbuttons-io-buttonC:active .icon {
-        transform: scale(0.95);
-    }
-
-
-    @media (max-width: 640px) {
-        header {
-            padding: 1rem;
-            height: 80px;
-        }
-
-        .logo {
-            font-size: 1.75rem;
-        }
-
-        main {
-            padding: 1rem;
-            margin: 100px auto 1rem;
-        }
-
-        .contacts-container {
-            padding: 1.5rem;
-        }
-
-        .contact-card {
-            flex-direction: column;
-            gap: 1rem;
-            text-align: center;
-        }
-
-        .contact-info {
-            flex-direction: column;
-            width: 100%;
-        }
-
-        .ver-btn {
-            width: 100%;
-        }
-    }
+}
