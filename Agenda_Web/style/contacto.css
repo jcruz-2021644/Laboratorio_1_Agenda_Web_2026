@@ -297,6 +297,7 @@ main {
 
 .add-contact-form {
     display: flex;
+    object-position: center;
     flex-direction: column;
     /*espacio entre input*/
     gap: 25px;
