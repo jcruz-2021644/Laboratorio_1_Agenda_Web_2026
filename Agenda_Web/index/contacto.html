@@ -229,16 +229,28 @@
     </div>
     <script src="../script/index.js"></script>
 
-    <!-- Modal para agregar nuevo contacto (solo visual)-->
+    <!-- Modal para agregar nuevo contacto-->
     <div id="addContactModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeAddContactModal()">&times;</span>
+        <div class="modal-content-add">
+            <span class="close-add" onclick="closeAddContactModal()">&times;</span>
             <h2>Agregar Nuevo Contacto</h2>
-            <form class="add-contact-form">
-                <input type="text" placeholder="Nombre completo">
-                <input type="tel" placeholder="Teléfono">
-                <input type="text" placeholder="Dirección">
-                <input type="file">
+            <form id="registerForm">
+                <div id="registerMessage"></div>
+                <div class="input_box">
+                    <input type="text" id="register-nombre" class="input-field" required>
+                    <label for="register-nombre" class="label">Nombre Completo</label>
+                    <i class="bx bx-user icon-add"></i>
+                </div>
+                <div class="input_box">
+                    <input type="email" id="register-direccion" class="input-field" required>
+                    <label for="register-direccion" class="label">Direccion</label>
+                    <i class="fa-solid fa-location-dot icon-add"></i>
+                </div>
+                <div class="input_box">
+                    <input type="text" id="register-telefono" class="input-field" required>
+                    <label for="register-telefono" class="label">Telefono</label>
+                    <i class="fa-solid fa-phone icon-add"></i>
+                </div>
                 <button class="cssbuttons-io-buttonC" type="button">
                     Agregar Contacto
                     <div class="icon">
