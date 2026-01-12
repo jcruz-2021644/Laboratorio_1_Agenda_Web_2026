@@ -1,11 +1,10 @@
-/* ================= RESET ================= */
+/* ================= RESET & BASE ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ================= BODY ================= */
 body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
@@ -73,17 +72,17 @@ header {
   fill: #ffffff;
 }
 
-/* ================= MAIN ================= */
+/* ================= MAIN CONTENT ================= */
 main {
   padding: 2rem;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 120px auto 2rem;
 }
 
-/* ================= TASK CONTAINER ================= */
 .task-container {
   background-color: rgba(0, 0, 0, 0.85);
   border-radius: 20px;
+  width: 100%;
   padding: 2rem;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
 }
@@ -107,17 +106,19 @@ main {
   background: black;
   color: #ffffff;
 }
+
 .form-group .sort-select-agregar label {
   color: #ffffff;
 }
 
-.form-group .sort-select-agregar{
+.form-group .sort-select-agregar {
   padding: 0.5rem 1rem;
   border-radius: 12px;
   border: 2px solid #ffffff;
   background: black;
   color: #ffffff;
 }
+
 
 /* ================= TASK LIST ================= */
 .tasks-list {
@@ -141,6 +142,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  flex: 1;
 }
 
 .task-title {
@@ -156,7 +158,7 @@ main {
   flex-wrap: wrap;
 }
 
-/* ================= DATE + SVG ================= */
+/* ================= DATE & DIFFICULTY ================= */
 .task-date {
   display: flex;
   align-items: center;
@@ -169,10 +171,8 @@ main {
   width: 16px;
   height: 16px;
   fill: #d0d0d0;
-  flex-shrink: 0;
 }
 
-/* ================= DIFFICULTY ================= */
 .task-difficulty {
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
@@ -195,173 +195,195 @@ main {
   color: #fff;
 }
 
-/* ================= FECHA CLICKEABLE COMPLETA ================= */
-.date-wrapper {
-  position: relative;
-  width: 100%;
+/* ================= TASK ACTIONS ================= */
+.task-actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
 }
 
-/* INPUT DATE */
-.date-wrapper input[type="date"] {
-  width: 100%;
-  height: 46px;
-  padding: 0.7rem 1rem;
-  border-radius: 30px;
+.task-actions select {
+  width: 140px;
+  /* tamaño controlado */
+  height: 2.8em;
+  /* misma altura que botones */
+  padding: 0 0.8rem;
+  border-radius: 20px;
   border: 2px solid #ffffff;
-  background: transparent;
+  background: black;
   color: #ffffff;
+  font-size: 0.85rem;
   cursor: pointer;
 }
 
-/* HACER TODA EL ÁREA CLICKEABLE */
-.date-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
+.status-select {
+  width: 140px;
+  height: 2.8em;
+  padding: 0 0.8rem;
+  border-radius: 20px;
+  border: 2px solid #ffffff;
+  background: black;
+  color: #ffffff;
+  font-size: 0.85rem;
   cursor: pointer;
 }
 
-/* ENFOQUE */
-.date-wrapper input[type="date"]:focus {
-  outline: none;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+/* Estados */
+.status-select.pendiente {
+  border-color: #ff4444;
+  color: #ff4444;
+  background-color: black;
+}
+
+.status-select.proceso {
+  border-color: #ffeb3b;
+  color: #ffeb3b;
+  background-color: black;
+}
+
+.status-select.finalizada {
+  border-color: #4caf50;
+  color: #4caf50;
+  background-color: black;
 }
 
 
-
-/* ================= BOTÓN AGREGAR ================= */
-.cssbuttons-io-buttonC {
-    /*color de fondo del boton*/
-    background: #ff0303b9;
-    /*color de letra*/
-    color: white;
-    font-family: inherit;
-    /*espacio interno*/
-    padding: 0.35em;
-    /*para que el texto no quede pegado*/
-    padding-left: 3rem;
-    font-size: 17px;
-    font-weight: 500;
-    border-radius: 0.9em;
-    border: none;
-    letter-spacing: 0.05em;
-    display: flex;
-    align-items: center;
-    /*somnra de adentro*/
-    box-shadow: inset 0 0 1.6em -0.6em #000000;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    height: 2.8em;
-    padding-right: 3.3em;
-    cursor: pointer;
-}
-
-
-.cssbuttons-io-buttonC .icon {
-    /*fondo donde esta el icono*/
-    background: white;
-    margin-left: 1em;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 2.2em;
-    width: 2.2em;
-    border-radius: 0.7em;
-    /*sombra de adentro*/
-    box-shadow: 0.1em 0.1em 0.6em 0.2em #00000088;
-    right: 0.3em;
-    transition: all 0.3s;
-}
-
-.cssbuttons-io-buttonC:hover .icon {
-    width: calc(100% - 0.6em);
-}
-
-.cssbuttons-io-buttonC .icon svg {
-    width: 1.1em;
-    transition: transform 0.3s;
-    color: #000000;
-}
-
-.cssbuttons-io-buttonC:hover .icon svg {
-    transform: translateX(0.1em);
-}
-
-.cssbuttons-io-buttonC:active .icon {
-    transform: scale(0.95);
-}
-
-
-
-
-/* ================= BOTÓN VER ================= */
+/* ================= BUTTONS ================= */
+/* Botones CSS-IO (Agregar y Ver) */
+.cssbuttons-io-buttonC,
 .cssbuttons-io-buttonVer {
-    /*color de fondo del boton*/
-    background: #ff0303b9;
-    /*color de letra*/
-    color: white;
-    font-family: inherit;
-    /*espacio interno*/
-    padding: 0.35em;
-    /*para que el texto no quede pegado*/
-    padding-left: 2.5rem;
-    font-size: 17px;
-    font-weight: 500;
-    border-radius: 0.9em;
-    border: none;
-    letter-spacing: 0.05em;
-    display: flex;
-    align-items: center;
-    /*somnra de adentro*/
-    box-shadow: inset 0 0 1.6em -0.6em #000000;
-    overflow: hidden;
-    position: relative;
-    width: 25%;
-    height: 2.8em;
-    padding-right: 3.3em;
-    cursor: pointer;
+  background: #ff0303b9;
+  color: white;
+  font-family: inherit;
+  padding: 0.35em 3rem 0.35em 3rem;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #000000;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  cursor: pointer;
+  padding-left: 10px;
 }
 
+.cssbuttons-io-buttonC {
+  width: 100%;
+}
 
+.cssbuttons-io-buttonVer {
+  width: auto;
+  min-width: 110px;
+}
+
+.cssbuttons-io-buttonC .icon,
 .cssbuttons-io-buttonVer .icon {
-    /*fondo donde esta el icono*/
-    background: white;
-    margin-left: 1em;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 2.2em;
-    width: 2.2em;
-    border-radius: 0.7em;
-    /*sombra de adentro*/
-    box-shadow: 0.1em 0.1em 0.6em 0.2em #00000088;
-    right: 0.3em;
-    transition: all 0.3s;
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #00000088;
+  right: 0.3em;
+  transition: all 0.3s;
 }
 
-.cssbuttons-io-buttonVer:hover .icon {
-    width: calc(100% - 0.6em);
-}
-
+.cssbuttons-io-buttonC .icon svg,
 .cssbuttons-io-buttonVer .icon svg {
-    width: 1.1em;
-    transition: transform 0.3s;
-    color: #000000;
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #000000;
 }
 
+.cssbuttons-io-buttonC:hover .icon,
+.cssbuttons-io-buttonVer:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-buttonC:hover .icon svg,
 .cssbuttons-io-buttonVer:hover .icon svg {
-    transform: translateX(0.1em);
+  transform: translateX(0.1em);
 }
 
+.cssbuttons-io-buttonC:active .icon,
 .cssbuttons-io-buttonVer:active .icon {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
-/* ================= MODAL ================= */
+
+/* Botones modales */
+.btn-close-modal,
+.btn-close-modal-save {
+  padding: 5px;
+  position: relative;
+  height: 2.3em;
+  transition: 0.4s;
+  font-size: 16px;
+  border-radius: 0.6em;
+  cursor: pointer;
+  border: 2px solid #ff0303b9;
+}
+
+.btn-close-modal {
+  background-color: transparent;
+  width: 7em;
+  box-shadow: inset 0 0 0.8em -0.4em #000000;
+}
+
+.btn-close-modal-save {
+  background-color: #ff0303b9;
+  width: 9.5rem;
+  box-shadow: inset 0 0 1.2em -0.4em #000000;
+}
+
+.btn-close-modal p,
+.btn-close-modal-save p {
+  position: absolute;
+  top: 0.45em;
+  left: 1.4em;
+  margin: 0;
+  padding: 0;
+  transition: 0.4s;
+  color: #ffffff;
+}
+
+.btn-close-modal svg,
+.btn-close-modal-save svg {
+  position: absolute;
+  top: 0.5em;
+  right: 0.7em;
+  opacity: 0;
+  transition: 0.4s;
+  height: 1em;
+  fill: #ffffff;
+}
+
+.btn-close-modal:hover {
+  background-color: #ff0303b9;
+}
+
+.btn-close-modal-save:hover {
+  background-color: #ff0303;
+}
+
+.btn-close-modal:hover p,
+.btn-close-modal-save:hover p {
+  left: 0.9em;
+}
+
+.btn-close-modal:hover svg,
+.btn-close-modal-save:hover svg {
+  opacity: 1;
+}
+
+/* ================= MODALS ================= */
 .modal {
   display: none;
   position: fixed;
@@ -376,14 +398,26 @@ main {
   align-items: center;
 }
 
-.modal-content-add {
+.modal-content-add,
+.modal-content-view {
   background: #111;
   padding: 2.5rem;
-  width: 100%;
-  max-width: 550px;
   border-radius: 14px;
   color: #fff;
   position: relative;
+}
+
+.modal-content-add {
+  width: 100%;
+  max-width: 550px;
+}
+
+.modal-content-view {
+  width: 100%;
+  max-width: 650px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
 }
 
 .close-add {
@@ -395,9 +429,15 @@ main {
   cursor: pointer;
 }
 
-/* ================= FORM ================= */
+/* ================= FORMS ================= */
 .form-group {
   margin-bottom: 1rem;
+}
+
+.form-row,
+.detail-row {
+  display: flex;
+  gap: 1rem;
 }
 
 .form-group input,
@@ -411,16 +451,41 @@ main {
   color: #ffffff;
 }
 
-/* ================= VIEW TASK ================= */
+.date-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.date-wrapper input[type="date"] {
+  width: 100%;
+  height: 46px;
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+  border: 2px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.date-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.date-wrapper input[type="date"]:focus {
+  outline: none;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+/* ================= TASK DETAIL VIEW ================= */
 .task-detail {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-}
-
-.detail-row {
-  display: flex;
-  gap: 1rem;
 }
 
 .detail-group {
@@ -437,6 +502,8 @@ main {
   background: rgba(255, 255, 255, 0.1);
   padding: 0.7rem 1rem;
   border-radius: 20px;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .difficulty-badge {
@@ -446,106 +513,76 @@ main {
   width: fit-content;
 }
 
-.btn-close-modal {
-  background-color: transparent;
-  border: 2px solid #ff0303b9;
-  padding: 5px;
-  position: relative;
-  width: 7em;
-  height: 2.3em;
-  transition: 0.4s;
-  font-size: 16px;
-  border-radius: 0.6em;
-  cursor: pointer;
-  box-shadow: inset 0 0 0.8em -0.4em #000000;
+/* ================= STATUS INDICATORS ================= */
+
+.task-actions select {
+  width: 120px;
+  height: 3rem;
+  font-size: 0.8rem;
 }
 
-.btn-close-modal p {
-  position: absolute;
-  top: 0.45em;
-  left: 1.4em;
-  margin: 0;
-  padding: 0;
-  transition: 0.4s;
-  color: #ffffff;
+
+.task-item.pendiente {
+  border-left: 6px solid #ff4444;
 }
 
-.btn-close-modal svg {
-  position: absolute;
-  top: 0.5em;
-  right: 0.7em;
-  opacity: 0;
-  transition: 0.4s;
-  height: 1em;
-  fill: #ffffff;
+.task-item.proceso {
+  border-left: 6px solid #ffeb3b;
 }
 
-.btn-close-modal:hover {
-  background-color: #ff0303b9;
+.task-item.finalizada {
+  border-left: 6px solid #4caf50;
 }
 
-.btn-close-modal:hover p {
-  left: 0.9em;
+/* ================= SCROLLBARS ================= */
+.modal-content-view::-webkit-scrollbar,
+.detail-group p::-webkit-scrollbar {
+  width: 6px;
 }
 
-.btn-close-modal:hover svg {
-  opacity: 1;
+.modal-content-view::-webkit-scrollbar-thumb,
+.detail-group p::-webkit-scrollbar-thumb {
+  background: #ff0303b9;
+  border-radius: 10px;
 }
 
-/* ================= BOTÓN GUARDAR MODAL ================= */
-.btn-close-modal-save {
-  background-color: #ff0303b9;
-  border: 2px solid #ff0303b9;
-  padding: 5px;
-  position: relative;
-  width: 9.5rem;
-  height: 2.3em;
-  transition: 0.4s;
-  font-size: 16px;
-  border-radius: 0.6em;
-  cursor: pointer;
-  box-shadow: inset 0 0 1.2em -0.4em #000000;
-}
-
-.btn-close-modal-save p {
-  position: absolute;
-  top: 0.45em;
-  left: 1.4em;
-  margin: 0;
-  padding: 0;
-  transition: 0.4s;
-  color: #ffffff;
-}
-
-.btn-close-modal-save svg {
-  position: absolute;
-  top: 0.5em;
-  right: 0.7em;
-  opacity: 0;
-  transition: 0.4s;
-  height: 1em;
-  fill: #ffffff;
-}
-
-.btn-close-modal-save:hover {
-  background-color: #ff0303;
-}
-
-.btn-close-modal-save:hover p {
-  left: 0.9em;
-}
-
-.btn-close-modal-save:hover svg {
-  opacity: 1;
-}
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
+  .task-controls {
+    grid-template-columns: 1fr;
+  }
+
   .task-item {
     flex-direction: column;
     align-items: stretch;
+    gap: 1rem;
   }
 
+  .task-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .task-actions select {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .task-actions button {
+    width: 100%;
+  }
+
+  .form-row,
   .detail-row {
     flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .modal-content-add,
+  .modal-content-view {
+    padding: 1.5rem;
+    margin: 1rem;
   }
 }
