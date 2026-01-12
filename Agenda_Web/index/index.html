@@ -1,94 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login A.T.KNL</title>
-    <link rel="icon" type="image/x-icon" href="../images/Agencia Telefonica JC.jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../style/index.css">
-</head>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../images/Agencia Telefonica JC.jpg"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../style/index.css" />
+  </head>
 
-<body>
+  <body>
     <nav class="navbar">
-        <div class="container">
-            <div class="logo">AT<span>.KNL</span></div>
-        </div>
+      <div class="container">
+        <div class="logo">AT<span>.KNL</span></div>
+      </div>
     </nav>
 
     <main class="login">
-        <div class="text-center">
-            <h6><span>Iniciar Sesión</span> <span>Registrarse</span></h6>
-            <input type="checkbox" class="checkbox" id="reg-log">
-            <label for="reg-log"></label>
-            <div class="card-3d-wrap">
-                <div class="card-3d-wrapper">
-                    <!-- Cara del login -->
-                    <div class="card-front">
-                        <div class="login-header">
-                            <span>Login</span>
-                        </div>
-                        <form id="loginForm">
-                            <div class="input_box">
-                                <input type="email" id="loginEmail" class="input-field" required>
-                                <label for="loginEmail" class="label">Email</label>
-                                <i class="bx bx-envelope icon"></i>
-                            </div>
-                            <div class="input_box">
-                                <input type="password" id="loginPass" class="input-field" required>
-                                <label for="loginPass" class="label">Contraseña</label>
-                                <i class="bx bx-lock-alt icon"></i>
-                            </div>
-                            <div class="remember-forgot">
-                                <div class="forgot">
-                                    <a href="#" class="link">¿Olvidaste tu contraseña?</a>
-                                </div>
-                            </div>
-                            <div class="input_box">
-                                <button type="submit" class="input-submit">Iniciar Sesión</button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- cara del registrar-->
-                    <div class="card-back">
-                        <div class="login-header">
-                            <span>Registrar</span>
-                        </div>
-                        <form id="registerForm">
-                            <div id="registerMessage"></div>
-                            <div class="input_box">
-                                <input type="text" id="registerUser" class="input-field" required>
-                                <label for="registerUser" class="label">Usuario</label>
-                                <i class="bx bx-user icon"></i>
-                            </div>
-                            <div class="input_box">
-                                <input type="email" id="registerEmail" class="input-field" required>
-                                <label for="registerEmail" class="label">Email</label>
-                                <i class="bx bx-envelope icon"></i>
-                            </div>
-                            <div class="input_box">
-                                <input type="password" id="registerPass" class="input-field" required>
-                                <label for="registerPass" class="label">Contraseña</label>
-                                <i class="bx bx-lock-alt icon"></i>
-                            </div>
-                            <div class="input_box">
-                                <button type="submit" class="input-submit">Registrarme</button>
-                            </div>
-                            <div class="register">
-                                <span>¿Ya tienes cuenta? <a href="contacto.html">Inicia Sesión</a></span>
-                            </div>
-                        </form>
-                    </div>
+      <div class="text-center">
+        <h6><span>Iniciar Sesión</span> <span>Registrarse</span></h6>
+        <input type="checkbox" class="checkbox" id="reg-log" />
+        <label for="reg-log"></label>
+        <div class="card-3d-wrap">
+          <div class="card-3d-wrapper">
+            <!-- Cara del login -->
+            <div class="card-front">
+              <div class="login-header">
+                <span>Login</span>
+              </div>
+              <form id="loginForm">
+                <div class="input_box">
+                  <input
+                    type="email"
+                    id="loginEmail"
+                    class="input-field"
+                    required
+                  />
+                  <label for="loginEmail" class="label">Email</label>
+                  <i class="bx bx-envelope icon"></i>
                 </div>
+                <div class="input_box">
+                  <input
+                    type="password"
+                    id="loginPass"
+                    class="input-field"
+                    required
+                  />
+                  <label for="loginPass" class="label">Contraseña</label>
+                  <i class="bx bx-lock-alt icon"></i>
+                </div>
+                <div class="remember-forgot">
+                  <div class="forgot">
+                    <a href="#" class="link">¿Olvidaste tu contraseña?</a>
+                  </div>
+                </div>
+                <div class="input_box">
+                  <button type="submit" class="input-submit">
+                    Iniciar Sesión
+                  </button>
+                </div>
+              </form>
             </div>
+
+            <!-- cara del registrar-->
+            <div class="card-back">
+              <div class="login-header">
+                <span>Registrar</span>
+              </div>
+              <form id="registerForm">
+                <div id="registerMessage"></div>
+                <div class="input_box">
+                  <input
+                    type="text"
+                    id="registerUser"
+                    class="input-field"
+                    required
+                  />
+                  <label for="registerUser" class="label">Usuario</label>
+                  <i class="bx bx-user icon"></i>
+                </div>
+                <div class="input_box">
+                  <input
+                    type="email"
+                    id="registerEmail"
+                    class="input-field"
+                    required
+                  />
+                  <label for="registerEmail" class="label">Email</label>
+                  <i class="bx bx-envelope icon"></i>
+                </div>
+                <div class="input_box">
+                  <input
+                    type="password"
+                    id="registerPass"
+                    class="input-field"
+                    required
+                  />
+                  <label for="registerPass" class="label">Contraseña</label>
+                  <i class="bx bx-lock-alt icon"></i>
+                </div>
+                <div class="input_box">
+                  <button type="submit" class="input-submit">
+                    Registrarme
+                  </button>
+                </div>
+                <div class="register">
+                  <span
+                    >¿Ya tienes cuenta?
+                    <a href="contacto.html">Inicia Sesión</a></span
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
     <script src="../script/index.js"></script>
-</body>
-
+  </body>
 </html>
