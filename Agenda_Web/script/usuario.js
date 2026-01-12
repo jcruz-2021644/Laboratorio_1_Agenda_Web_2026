@@ -8,5 +8,5 @@
     } else {
         // Si no hay usuario logueado
         alert("Debes iniciar sesión");
-        window.location.href = "login.html"; // ajusta ruta
+        window.location.href = "index.html"; // ajusta ruta
     }
