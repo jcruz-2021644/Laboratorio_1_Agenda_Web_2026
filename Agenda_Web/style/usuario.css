@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background-image: url("../images/FondoContacto.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+header {
+    background-color: rgba(41, 41, 41, 0.85);
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    padding: 0 25px;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-at {
+    color: #ffffff;
+}
+
+.logo-knl {
+    color: #ff0000;
+}
+
+.header-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.icon-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.233);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon-btn.active {
+    background-color: #ffc400;
+    border-color: #ffc400;
+}
+
+.icon-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+}
+
+.icon-btn-home {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.icon-btn-home:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon-btn-home.active {
+    background-color: #fc684e;
+    border-color: #fc684e;
+}
+
+.icon-btn-home svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+}
+
+main {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 120px auto 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+}
+
+.profile-container {
+    background-color: rgba(100, 100, 100, 0.541);
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    width: 100%;
+    box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ff0000;
+    object-fit: cover;
+    box-shadow: 0 0 20px 3px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.profile-avatar:hover {
+    border-color: #ffffff;
+    box-shadow: 0 0 20px 3px rgba(255, 0, 0, 0.7);
+    transform: scale(1.05);
+}
+
+.profile-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.form-label {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    width: 100%;
+    max-width: 320px;
+    text-align: left;
+}
+
+.input {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    background: linear-gradient(145deg, #ffffff, #f1f1f1);
+    border: 2px solid #000000;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.input:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        6px 6px 0 #08c5ff,
+        inset 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+/* Focus */
+.input:focus {
+    border-color: #ff0000;
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.25), 6px 6px 0 #fd3d2fb0;
+}
+
+/* Placeholder */
+.input::placeholder {
+    color: #777;
+}
+
+
+.input[readonly] {
+    background: white;
+    box-shadow: inset 0 0 1.6em -0.6em #8d8d8d85;
+    color: #333;
+    cursor: default;
+    border: 3px dashed #4747478f;
+
+}
+
+.input[readonly]:hover {
+    box-shadow: 6px 6px 0 #fd3d2fb0;
+}
+
+.cssbuttons-io-button {
+    /*color de fondo del boton*/
+    background: #ff0303b9;
+    /*color de letra*/
+    color: white;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    /*somnra de adentro*/
+    box-shadow: inset 0 0 1.6em -0.6em #000000;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+}
+
+.cssbuttons-io-button a {
+
+    text-decoration: none;
+    color: inherit;
+}
+
+.cssbuttons-io-button .icon {
+    /*fondo donde esta el icono*/
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    /*sombra de adentro*/
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #00000088;
+    right: 0.3em;
+    transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #000000;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+}
+
+
+
+@media (max-width: 640px) {
+    header {
+        padding: 1rem;
+        height: 80px;
+    }
+
+    .logo {
+        font-size: 1.75rem;
+    }
+
+    main {
+        padding: 1rem;
+        margin: 100px auto 1rem;
+    }
+
+    .profile-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .profile-avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .input {
+        max-width: 100%;
+    }
+}
