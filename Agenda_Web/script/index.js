@@ -34,7 +34,7 @@
 
     if (storedData && emailLogin === storedData.email && passLogin === storedData.password) {
         alert("¡Inicio de sesión exitoso!");
-        window.location.href = "contacto.html";
+        window.location.href = "index/contacto.html";
     } else {
         alert("Correo o contraseña incorrectos.");
     }
